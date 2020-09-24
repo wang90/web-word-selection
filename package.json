@@ -1,0 +1,31 @@
+{
+  "name": "web-word-selection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "webpack"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server  --config webpack/webpack.dev.js",
+    "build": "webpack --config webpack/webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wang90/web-word-selection.git"
+  },
+  "author": "wang90",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wang90/web-word-selection/issues"
+  },
+  "homepage": "https://github.com/wang90/web-word-selection#readme",
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4"
+  }
+}

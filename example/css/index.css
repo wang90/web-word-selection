@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+body{
+    font-family: "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", STXihei, "\534E\6587\7EC6\9ED1", "Helvetica Neue", Helvetica, Arial, sans-serif, serif;
+    /* font-size:18px; */
+    /* box-shadow: 0 0 2px 2px #f0f0f0; */
+    text-shadow: 0 0 1px #f0f0f0;
+    background: #fff;
+}
+img{
+    display: block;
+    max-width:100%;
+    height:auto;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 15px auto;
+    /* box-shadow: 0 0 2px 2px #f0f0f0; */
+}
+video{
+    display: block;
+    max-width:100%;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 15px auto;
+}
+div,p{
+    height:auto !important;
+}
+.main{
+    margin-left: 3.07692em;
+    margin-right: 3.07692em;
+}
+.body{
+    max-width: 704px;
+    margin: 0 auto;
+    padding-bottom: 90px;
+    word-break: break-all;
+}
+a{
+    color:#5ebb8d
+}
+
+ul,li{
+    list-style: none;
+}
+
+ul > li{
+    position: relative;
+    padding-left:18px;
+}
+ul > li::before{
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: #666;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    top: 12px;
+    left: 5px;
+}
+
+.author{
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+    text-align: justify;
+    font-family: "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    text-align: left;
+    word-break: break-word;
+    width: auto;
+    margin: 0 auto;
+}
+
+.content-html {
+    width: auto;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    font-size: 18px;
+    /* font-size:0.8rem; */
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    font-family: "LibreBaskerville-Regular","Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    text-align: left;
+    word-break: break-word;
+}
+p{
+    text-align: left;
+    /* margin: 0 0 0.1em 0; */
+    margin: 0 0 1.75rem 0;
+    text-rendering: geometricPrecision;
+    display: block;
+    /* font-size: 1.2rem; */
+    font-size: 20px;
+    font-family: "LibreBaskerville-Regular", "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    /* letter-spacing: 0.05rem; */
+    color: #3A4145;
+    line-height:1.5;
+    word-break: break-word;
+}
+.en-html p.cyxy-trs-target,.zh-html p.cyxy-trs-source-ted{
+    text-align: justify;
+}
+p.cyxy-trs-target{
+    margin: 0 0 15px 0;
+}
+p.cyxy-trs-source{
+    margin: 0 0 15px 0;
+}
+#title{
+    font-size: 42px;
+    letter-spacing: 0;
+    font-family: "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+#org_des{
+    line-height: 1.2;
+    color: #9EABB3;
+    font-size: 24px;
+    /* text-transform: uppercase; */
+    white-space: nowrap;
+    /* font-family: inherit; */
+    text-rendering: geometricPrecision;
+    /* display: inline-block; */
+    font-family: "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    /* letter-spacing: 0.01rem; */
+    font-weight: normal;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+.org_des_date{
+    padding-left:15px;
+}
+.org_des_org{
+    padding-right:15px;
+}
+#org_des.cyxy-trs-target{
+    display:none;
+}
+
+.cyxy-personal{
+    bottom: 110px !important;
+}
+.not-content{
+    position: fixed;
+    left: 0 ;
+    top: 0;
+    bottom: 0;
+    right:0;
+    background: #fff;
+    color:#999;
+    padding-top: 20%;
+    text-align: center;
+    display: none;
+}
+
+.not-content>img{
+    width:100px;
+    margin-right: -40px;
+    display:inline-block;
+    margin-bottom: 20px;
+}
+.not-content>p{
+  text-align: center;
+}
+.content-html h1,
+.content-html h2,
+.content-html h3,
+.content-html h4,
+.content-html h5,
+.content-html h6{
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: normal;
+    letter-spacing: 0.05rem;
+}
+@media only screen and (max-width: 500px) {
+    #title{
+        font-size: 1.25rem;
+        margin: 0 0 0.3rem 0;
+        line-height: 1.5;
+        letter-spacing: 0rem;
+    }
+    #org_des{
+        font-size: 0.8rem;
+        padding-top:0.2rem;
+    }
+    p,.content-html{
+       font-size:1.0313rem;
+       line-height: 2;
+    }
+
+    ul > li::before{
+        width: 0.2rem;
+        height: 0.2rem;
+        top: 0.60rem;
+        left: 0.3rem;
+    }
+    p.cyxy-trs-target{
+        margin: 0 0 2rem 0;
+    }
+    p.cyxy-trs-source{
+        margin: 0 0 1rem 0;
+    }
+    .en-html p.cyxy-trs-source-ted{
+        line-height:1.7;
+    }
+    .zh-html p.cyxy-trs-target{
+        line-height:1.7;
+    }
+}
+
+.content-title{
+    color:#000;
+    margin: 1rem 0 3.4rem;
+    padding-bottom: .1rem;
+    text-align: left;
+    padding-left:20px;
+    padding-right:20px;
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 5rem;
+    text-indent: -3px;
+    font-family: "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    line-height: 1.15rem;
+    margin-bottom: 0;
+}
+h3{
+    font-family:"LibreBaskerville-Regular", "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    /* letter-spacing: 0.01rem; */
+    font-size: 1.85rem;
+    margin: 0 0 0.3rem 0;
+}
+
+h2{
+    font-family: "LibreBaskerville-Regular","Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    /* letter-spacing: 0.01rem; */
+    font-size: 1.85rem;
+    margin: 0 0 0.3rem 0;
+}
+
+.avator-box{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 0.39rem;
+    color: #666;
+    font-family: "LibreBaskerville-Regular", "Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+    font-size: 0.8rem;
+}
+.avator-img{
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 2.1rem;
+    height:2.1rem;
+    margin:0;
+    margin-right: 5px;
+    margin-right: 10px;
+    /* box-shadow: 0 0 2px 1px #ccc; */
+}
+.hight-lignt-input{
+    background:rgba(0, 185, 119,0.2) !important;
+    white-space: break-spaces;
+}
