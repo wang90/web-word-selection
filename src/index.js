@@ -4,7 +4,6 @@ import { bindAddEventListener } from "./libs/bindEvent";
 import { getCurrent } from "./libs/nodeInfo";
 import { markHTML } from "./libs/markHtml";
 
-
 class HightLignt {
 
     constructor (root,classNames = [] ) {
