@@ -26,6 +26,7 @@ hightLignt.hook( (word) => {
 `````
 
 ## Example
+![example](./images/readme-01.png)
 `````
 npm run dev
 `````
