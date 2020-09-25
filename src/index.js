@@ -64,7 +64,7 @@ class HightLignt {
             fn({ "event": e, "type" : type });
         });   
     }
-    hooks(fn) {
+    getWord(fn) {
         if ( typeof(fn) === 'function') {
             this.callback  = fn;
         }

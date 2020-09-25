@@ -22,7 +22,7 @@ const hightLignt =  new HightLignt( body, notClassNames);
 hightLignt.run()
 
 // 获得点击的词语
-hightLignt.hooks( (word) => {
+hightLignt.getWord( (word) => {
 // get word
 })
 `````
@@ -34,3 +34,16 @@ npm run dev
 ##### 示例：
 
 ![example-w150](./images/readme-01.png)
+
+## APIS
+
+#### Get Selecet Word
+`````
+hightLignt.getWord((word) =>{
+    // get word
+})
+`````
+#### Clear All Marks 
+`````
+hightLignt.clearAllMarks();
+`````
