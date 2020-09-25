@@ -6,7 +6,7 @@ window.onload = function(){
   // 运行
   hightLignt.run();
   // 获得点击的词语
-  hightLignt.hook( (word) => {
+  hightLignt.hooks( (word) => {
     // console.log(word);
   });
   // window.clearMarks = function(){

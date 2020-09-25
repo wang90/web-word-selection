@@ -17,12 +17,14 @@ npm run build
 const notClassNames = [];
 const body = null;
 const hightLignt =  new HightLignt( body, notClassNames);
+
 // 运行
-hightLignt.run();
+hightLignt.run()
+
 // 获得点击的词语
-hightLignt.hook( (word) => {
-// console.log(word);
-});
+hightLignt.hooks( (word) => {
+// get word
+})
 `````
 
 ## Example

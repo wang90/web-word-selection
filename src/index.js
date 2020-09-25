@@ -6,7 +6,7 @@ import { markHTML } from "./libs/markHtml";
 
 class HightLignt {
 
-    constructor (root,classNames = [] ) {
+    constructor (root, classNames = [] ) {
         this.$root = root || document.getElementsByTagName('body')[0];
         this.notClassName = [ DefineClass, ...classNames];
         this.marks = [];
@@ -20,7 +20,7 @@ class HightLignt {
 
     run() {
         console.log('run');
-        this.bindEventListener( this.$root ,(data) =>{
+        this.bindEventListener( this.$root ,(data) => {
             this.isSetLoading(true);
             const  { event , type } = data;
             const current = getCurrent(event.target || null, this.notClassName);
@@ -43,12 +43,14 @@ class HightLignt {
     emitHook(mark) {
         this.isSetLoading();
         this.marks.push(mark);
-        this.hooks({
-            content: mark.oldValue,
-            text: mark.text,
-            word: mark.word,
-            offset: mark.offset,
-        });   
+        if (this.callback) {
+            this.callback({
+                content: mark.oldValue,
+                text: mark.text,
+                word: mark.word,
+                offset: mark.offset,
+            });
+    } 
     }
     isSetLoading(type = false) {
         this.isLoading = type;
@@ -59,14 +61,11 @@ class HightLignt {
             if (this.isLoading){
                 return ;
             }
-            fn({ "event": e, "type" : type});
+            fn({ "event": e, "type" : type });
         });   
     }
-    hooks(res) {
-        this.callback(res);
-    }
-    hook(fn) {
-        if (typeof(fn) === 'function') {
+    hooks(fn) {
+        if ( typeof(fn) === 'function') {
             this.callback  = fn;
         }
     }
