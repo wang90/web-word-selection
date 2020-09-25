@@ -5,8 +5,8 @@ import { ReWord , ReSearch , TranslateRe , DefineSpan } from "../config";
 
 export function markHTML( select, mark) {
     return new Promise((reslove, reject ) => {
-        setMark(select, mark).then(({current,html ,text , key}) => {
-            getSelectDom().then((node) => {
+        setMark(select, mark).then(( {current,html ,text , key} ) => {
+            getSelectDom().then(( node ) => {
                 let newValue = node.newValue;
                 let oldValue = node.oldValue;
                 const newMark = {
@@ -40,16 +40,16 @@ export function markHTML( select, mark) {
                     }
                 }
                 reslove(newMark);
-            }).catch(err=>{
+            }).catch( err => {
                 reject(err);
-            })
-        }).catch(err=>{
+            });
+        }).catch( err => {
             reject(err);
-        })
+        });
     });
 }
 export function setMark(select,mark) {
-    return new Promise((reslove, reject )=>{
+    return new Promise((reslove, reject ) => {
         const { key, current } = getNodeKey(select);
         let html = current.innerHTML || '';
         let text = current.innerText || '';
@@ -66,7 +66,7 @@ export function setMark(select,mark) {
 }
 
 function getSelectDom() {
-    return new Promise((resolve, rejected) => {
+    return new Promise((resolve, rejected ) => {
         const select = window.getSelection();
         if (select.type === 'Range') {
             rejected();
@@ -99,8 +99,8 @@ function bindWord(text,offset) {
     const end = text.substr( offset[1] );
     return {
         word: word,
-        value:`${first}${DefineSpan(word)}${end}`
-    }
+        value: `${first}${DefineSpan(word)}${end}`
+    };
 }
 
 
@@ -137,14 +137,14 @@ function searchWord( select, index , type) {
     }
 }
 function callbackSearchWord( word, select, index, type) {
-    if ( !ReWord.test( word ) || !word) { return { word: '',index: "" }}
+    if ( !ReWord.test( word ) || !word) { return { word: '',index: "" };}
     if ( type === 'left' ) {
         index -= 1;
     } else {
         index += 1;
     }
     const t = select[index];
-    if (/^[a-zA-Z]*$/.test(t) && t) {
+    if ( ReWord.test(t) && t ) {
         if (type == 'left') {
             word = t + word;
         } else {
@@ -154,7 +154,7 @@ function callbackSearchWord( word, select, index, type) {
     } else {
         if (type === 'left') {
             index = word.length + index;
-            if (/^[a-zA-Z]*$/.test(select[index])) {
+            if ( ReWord.test(select[index])) {
                 return callbackSearchWord( word , select , index , 'right');
             }
         }

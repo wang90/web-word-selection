@@ -38,10 +38,10 @@ export function getNodeKey(current){
     return { key , current };
 }
 
-function whileParentDom(current){
+function whileParentDom( current ) {
     const parent = current.parentNode;
     const parentNodeName = parent.nodeName;
-    if (NodeName.indexOf(parentNodeName) > -1){  
+    if (NodeName.indexOf(parentNodeName) > -1) {  
         return whileParentDom(parent);
     }
     return parent;

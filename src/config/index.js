@@ -11,7 +11,7 @@ const EventType = {click:"click"};
 const ReSearch = "reSearch";
 const DefineSpan = function(word) {
     return `<span style ="${DefineStyle}" >${word}</span>`;
-}
+};
 
 
 module.exports = {
