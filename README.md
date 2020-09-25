@@ -29,5 +29,6 @@ hightLignt.hook( (word) => {
 `````
 npm run dev
 `````
-![example](./images/readme-01.png)
+##### 示例：
 
+![example-w150](./images/readme-01.png)
