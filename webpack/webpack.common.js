@@ -9,7 +9,7 @@ module.exports = {
         filename: "bundle.js" // 打包后输出文件的文件名
     },
     plugins: [
-        new webpack.BannerPlugin('版权所有，翻版必究'),  // new一个插件的实例 
+        new webpack.BannerPlugin('author:wang90'),  // new一个插件的实例 
         new webpack.HotModuleReplacementPlugin() // 热更新插件。
       ]
 };
