@@ -11,6 +11,10 @@ git clone git@github.com:wang90/web-word-selection.git
 npm install
 npm run build
 ``````
+### or
+`````
+<script src="./dist/bundle.js"></script>
+````` 
 
 ## Usage
 `````
