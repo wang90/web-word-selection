@@ -21,6 +21,7 @@ class HightLignt {
     run() {
         console.log('run');
         this.bindEventListener( this.$root ,(data) => {
+            console.log(data);
             this.isSetLoading(true);
             const  { event , type } = data;
             const current = getCurrent(event.target || null, this.notClassName);
@@ -28,7 +29,7 @@ class HightLignt {
             if ( current ) {
                 switch(type) {
                     case EventType.click:
-                        markHTML( current, firstMark ).then(mark => {
+                        markHTML( event, current, firstMark ).then(mark => {
                             this.emitHook(mark);
                         }).catch((err) => {
                             this.isSetLoading(false);

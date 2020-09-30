@@ -2,11 +2,11 @@
 import { getNodeKey } from "./nodeInfo";
 import { ReWord , ReSearch , TranslateRe , DefineSpan } from "../config";
 
-
-export function markHTML( select, mark) {
+export function markHTML(event = null, select, mark) {
     return new Promise((reslove, reject ) => {
-        setMark(select, mark).then(( {current,html ,text , key} ) => {
-            getSelectDom().then(( node ) => {
+        console.log(5);
+        setMark(select, mark).then(( { current, html ,text , key } ) => {
+            getSelectDom(event).then(( node ) => {
                 let newValue = node.newValue;
                 let oldValue = node.oldValue;
                 const newMark = {
@@ -30,7 +30,6 @@ export function markHTML( select, mark) {
                         newMark.target.innerHTML =  newMark.oldValue.replace(oldValue, newValue);
               
                     } else {
-        
                         let markHtml = newMark.oldValue.split("&nbsp;");
                         markHtml = markHtml.join(" ");
                         const words = bindWord(markHtml, newMark.offset);
@@ -65,9 +64,11 @@ export function setMark(select,mark) {
     });
 }
 
-function getSelectDom() {
+function getSelectDom(e = null) {
+    console.log(e);
     return new Promise((resolve, rejected ) => {
-        const select = window.getSelection();
+        const select = windowSelecetion(e); 
+        console.log(select);
         if (select.type === 'Range') {
             rejected();
         } else if (select.type === 'Caret') {
@@ -78,6 +79,23 @@ function getSelectDom() {
             }else{
                 rejected();
             }
+        // } else if (select.type === 'Creat') {
+        //     // 存在bug
+        //     const range = select.range;
+        //     const textContent = range.startContainer.textContent;
+        //     console.log(range.toString())
+        //     expandRangeToWord(range);
+        //     const data = {
+        //         word : range.toString().trim(),
+        //         offset:[ range.startOffset, range.endOffset],
+        //         oldValue: textContent,
+        //         newValue: select,
+        //         isWord: true
+        //     }
+        //     const words = bindWord(textContent,data.offset);
+        //     data['newValue'] = words['value'];
+        //     console.log(data);
+        //     resolve(data);
         } else {
             rejected();
         }
@@ -89,6 +107,29 @@ export function reductionFirstMark(mark){
     if (mark){
         mark.target.innerHTML = mark.oldValue;
     }
+}
+// 设置 range
+function expandRangeToWord(range) {
+    while (range.startOffset > 0) {
+        if ( ReWord.test( range.toString() )) {
+            range.setStart(range.startContainer, range.startOffset + 1);
+            break;
+        }
+        range.setStart(range.startContainer, range.startOffset - 1);
+    }
+    while (range.endOffset < range.endContainer.length && ReWord.test( range.toString() )) {
+        range.setEnd(range.endContainer, range.endOffset + 1);
+    }
+    return range;
+}
+
+
+function windowSelecetion(event) {
+    let select = null;
+    if (window.getSelection) {
+        select = window.getSelection();
+    } 
+    return select;
 }
 
 
@@ -102,7 +143,6 @@ function bindWord(text,offset) {
         value: `${first}${DefineSpan(word)}${end}`
     };
 }
-
 
 function searchWord( select, index , type) {
     if (select === "undefined" || !select || ! ReWord.test(select[index])){
