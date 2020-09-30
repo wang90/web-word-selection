@@ -4,7 +4,6 @@ import { ReWord , ReSearch , TranslateRe , DefineSpan } from "../config";
 
 export function markHTML(event = null, select, mark) {
     return new Promise((reslove, reject ) => {
-        console.log(5);
         setMark(select, mark).then(( { current, html ,text , key } ) => {
             getSelectDom(event).then(( node ) => {
                 let newValue = node.newValue;
@@ -65,10 +64,8 @@ export function setMark(select,mark) {
 }
 
 function getSelectDom(e = null) {
-    console.log(e);
     return new Promise((resolve, rejected ) => {
         const select = windowSelecetion(e); 
-        console.log(select);
         if (select.type === 'Range') {
             rejected();
         } else if (select.type === 'Caret') {

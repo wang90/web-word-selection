@@ -1,7 +1,6 @@
 // webpack.config.js
 const path = require('path');
 const webpack = require('webpack'); 
-console.log("config");
 module.exports = {
     entry: path.join(__dirname, "../src/index.js"), // 入口文件
     output: {
